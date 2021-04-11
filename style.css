@@ -1,0 +1,28 @@
+.mainbd {
+  width: 100%;
+  display: flex;
+  border: 1px solid violet;
+}
+.left-section {
+  width: 25%;
+  margin-top: 100px;
+border: 1px solid green;
+}
+.left-section ul{
+    list-style: none;
+    margin-left: -20px;
+}
+
+.left-section ul:first-child{
+    border-bottom: 1px solid gray;
+}
+.center-section {
+    width: 50%;
+
+    text-align: center;border: 1px solid red;
+}
+.right-section {
+  width: 25%;
+  border: 1px solid yellow;
+}
+mainbd
