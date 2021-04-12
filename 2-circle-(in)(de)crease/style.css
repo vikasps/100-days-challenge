@@ -1,0 +1,51 @@
+body {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  background-color: lightcoral;
+}
+#circle {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border-radius: 50px;
+}
+button {
+  margin-top: 30px;
+  font-size: 30px;
+  color: black;
+}
+
+.fruit {
+  color: red;
+  font-size: 20px;
+}
+
+#apple {
+  background-color: green;
+}
+
+#apple div {
+  background-color: yellow;
+  margin: 20px;
+}
+
+#apple div span {
+  background-color: black;
+  margin: 20px;
+}
+
+#apple .orange {
+  background-color: orange;
+}
+
+#apple .orange span {
+  background-color: red;
+}
+
+.orange.fruit {
+  font-size: 40px;
+}

@@ -6,23 +6,23 @@
 .left-section {
   width: 25%;
   margin-top: 100px;
-border: 1px solid green;
+  border: 1px solid green;
 }
-.left-section ul{
-    list-style: none;
-    margin-left: -20px;
+.left-section ul {
+  list-style: none;
+  margin-left: -20px;
 }
 
-.left-section ul:first-child{
-    border-bottom: 1px solid gray;
+.left-section ul:first-child {
+  border-bottom: 1px solid gray;
 }
 .center-section {
-    width: 50%;
+  width: 50%;
 
-    text-align: center;border: 1px solid red;
+  text-align: center;
+  border: 1px solid red;
 }
 .right-section {
   width: 25%;
   border: 1px solid yellow;
 }
-mainbd
