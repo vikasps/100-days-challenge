@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+}
+input {
+  width: 250px;
+}
+div {
+  margin-top: 20px;
+  display: flex;
+}
+button {
+  padding: 10px;
+  background-color: lightcoral;
+  outline: none;
+  border-radius: 10px;
+  margin-left: 15px;
+}
