@@ -5,7 +5,7 @@ body {
   /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  background-color: orange;
+  background-color: greenyellow;
 }
 #circle {
   height: 10px;
@@ -17,6 +17,7 @@ button {
   margin-top: 30px;
   font-size: 30px;
   color: black;
+  background-color: limegreen;
 }
 
 .fruit {
