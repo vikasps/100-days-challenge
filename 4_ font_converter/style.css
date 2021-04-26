@@ -2,11 +2,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  background-color: gainsboro;
   margin: 0 auto;
 }
 input {
   width: 250px;
+  border-radius: 25px;
 }
 div {
   margin-top: 20px;
