@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#"><img class="logo" src="./asset/hcl logo.png" alt="logo"></a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">About-us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Contact-Us</a>
+                    </li>
+                </ul>
+                <form class="   d-flex justify-content-end form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+        <h1>Employee details</h1>
+        <div class="text-center">
+            <img src="./asset/apple-touch-icon-180x180.png" class="rounded" alt="empolyee-id">
+        </div>
+
+    </header>
+    <form>
+        <div class="form-row">
+            <div class="col">
+                <input id="firstName" type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <input id="lastName" type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="input">Employee ID</label>
+                <input id="employeeId" type="text" class="form-control" placeholder=" Enter Employee ID">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+        </div>
+
+        <!-- <div class="form-row"> -->
+
+        <!-- <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            </div> -->
+
+
+        <div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="input"> Mobile Number</label>
+                    <input type="text" maxlength="10" class="form-control" id="mobileNumber"
+                        placeholder=" Enter Mobile Number">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="input"> Relation Mobile Number</label>
+                    <input type="text" onfocusout="relatiMobileNo()" class="form-control" id="relativeMobileNumber"
+                        placeholder=" Enter Mobile Number">
+                </div>
+
+            </div>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress"
+                    placeholder="Plot-No,  Buliding name,  Street name">
+            </div>
+            <!-- <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div> -->
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <select id="inputState" class="form-control" onclick="stateselection();">
+                    <option selected>Choose...</option>
+                    <option value="tn">Tamil Nadu</option>
+                    <option value="ka">Karnataka</option>
+                    <option value="kl">kerala</option>
+                    <option value="others">others</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-3 d-none" id="hidden_input">
+                <label for="input">For other states </label>
+                <input type="text" class="form-control" id="inputhidden_state" placeholder=" Enter a state ">
+            </div>
+
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip">
+            </div>
+        </div>
+        <!-- <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label> -->
+        </div>
+        </div>
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label for="input"> Company worked</label>
+                <input type="text" class="form-control" id="inputpastcmpy" placeholder=" Enter Company worked">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="input"> Experience</label>
+                <input type="text" class="form-control" id="inputexpyears" placeholder=" Enter no of Years">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">salary per annum</label>
+                <input type="text" class="form-control" id="inputsalaryperannum">
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary align-center" onclick="submittingData(event)">Submit
+                Form</button></div>
+    </form>
+    <footer class=" table-responsive d-flex justify-content-center">
+
+        <table id="listoftable" class="table table-bordered table-dark text-center">
+            <thead>
+                <tr>
+
+                    <td>first-name</td>
+                    <td>last-name</td>
+                    <td>employeeId</td>
+                    <td>e-mail</td>
+                    <td id="mobile" class="phone">mobile-number</td>
+                    <td>relative-mobileNumber</td>
+                    <td>Address</td>
+                    <!-- <td>Address2</td> -->
+                    <td>City</td>
+                    <td>State</td>
+                    <td>Zip</td>
+                    <td>pastcmpy</td>
+                    <td>expyears</td>
+                    <td>salaryperannum</td>
+
+
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+
+
+
+        </table>
+
+    </footer>
+
+
+
+    <input type="submit" value="Submit">
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
