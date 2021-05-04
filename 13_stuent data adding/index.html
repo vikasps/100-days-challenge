@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Student Detail Form</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+
+</head>
+
+<body style="background-color:powderblue;">
+
+    <div class="text-center"> <img src="anna logo.png" alt="anna univ logo" alt anna univ logo /></div>
+
+    <div class="container">
+        <div class="text-center">
+            <h1>Student details</h1>
+        </div>
+    </div>
+    <h2 class="text-primary">Personal Details </h2>
+    <div class="row mt-2">
+        <div class="col">
+            <form id="studentdata">
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="Reg.No" class="text-primary">Reg.No</label>
+                        <input type="text" id="reg" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Name" class="text-primary">Name</label>
+                        <input type="text" id="name" class="form-control">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Class" class="text-primary">Class</label>
+                        <input type="text" id="stuClass" class="form-control">
+                    </div>
+                    <br>
+
+                    <div class="form-group col-md-4">
+                        <label for="email" class="text-primary">Email</label>
+                        <input type="text" id="email" class="form-control">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="schoolname" class="text-primary">School Name</label>
+                        <input type="text" id="schoolname" class="form-control">
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="city" class="text-primary">City</label>
+                        <input type="text" id="city" class="form-control">
+                    </div>
+
+                    <h3 class=" text-primary">Subject details </h3>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="subject" class="text-primary">Subject</label>
+                            <input type="text" id="subject" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="maxMark" class="text-primary">Maximum mark</label>
+                            <input type="number" id="maxMark" class="form-control">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="markScored" class="text-primary">Mark scored</label>
+                            <input type="number" id="markScored" class="form-control">
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-2 p-2">
+                        <button id="submitsubject" type="button" class="btn btn-primary" onclick="addInfo()">Add
+                            Subject</button>
+                    </div>
+
+
+
+                    <br>
+                    <br>
+                    <br>
+                    <div class="card">
+                        <table class="table  table-primary">
+                            <thead>
+                                <tr>
+                                    <th>Sl.No</th>
+                                    <th>Subject</th>
+                                    <th>Maximum Mark</th>
+                                    <th>Mark Scored</th>
+                                    <th>%</th>
+                                </tr>
+                            </thead>
+                            <tbody id="myMarks"></tbody>
+                        </table>
+
+                        <br>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="text-center mt-2">
+        <button class="btn btn-primary" id='submit' onclick="submitMarks()">submit</button>
+
+    </div>
+    <!-- <script src=" sd.js"> -->
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="marklist.js"></script>
+    <script src="./submitform.js"></script>
+
+</body>
+
+</html>
