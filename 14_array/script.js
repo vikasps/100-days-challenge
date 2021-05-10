@@ -13,3 +13,15 @@
                 console.log(" " + a[i][j]);
             }
         }
+
+//                matching array
+        var rt = [15, 02, 3, 4, 5, 6, 7, 8, 9, 33, 44, 55, 66, 88, 99, 0];
+        for (var i = 0; i < rt.length; i++) {
+
+            console.log(rt[i])
+            if (rt[i] == 33) {
+                console.log("the value is matching")
+            } else {
+
+            }
+        }
