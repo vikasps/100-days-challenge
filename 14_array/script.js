@@ -25,3 +25,15 @@
 
             }
         }
+        // finding odd and even
+        var rt = [15, 02, 3, 4, 5, 6, 7, 8, 9, 33, 44, 55, 66, 88, 99, 0];
+        for (var i = 0; i < rt.length; i++) {
+            // console.log(i)
+            if (rt[i] % 2 == 0) {
+                console.log("The number is even.", rt[i]);
+                // console.log(rt[i]);
+            } else {
+                console.log("the number is odd", rt[i]);
+            }
+        }
+
