@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="enter a string" id="str">
+        <button type="button" id="bt1">submit</button>
+    </div>
+    <p id="output"></p>
+    <script>
+        document.getElementById("bt1").addEventListener("click", function () {
+            var ip = document.getElementById("str").value;
+            var emptystr = "";
+            for (var i = ip.length - 1; i >= 0; i--) {
+                emptystr += ip.charAt(i);
+                console.log(emptystr);
+            }
+            document.getElementById("output").innerHTML = emptystr;
+        });
+    </script>
+</body>
+
+</html>
