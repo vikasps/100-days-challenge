@@ -9,21 +9,155 @@
 </head>
 
 <body>
-    <div>
+
+    <input type="text" name="enter a string" id="evennum">
+    <button type="button" id="bt3">submit</button>
+    </div>
+    <p id="op1"></p>
+
+    <!-- <input type="text" name="enter a string" id="pld">
+    <button type="button" id="bt2">submit</button>
+    </div>
+    <p id="op"></p> -->
+
+
+    <!-- <div>
         <input type="text" name="enter a string" id="str">
         <button type="button" id="bt1">submit</button>
     </div>
-    <p id="output"></p>
+    <p id="output"></p> -->
     <script>
-        document.getElementById("bt1").addEventListener("click", function () {
-            var ip = document.getElementById("str").value;
-            var emptystr = "";
-            for (var i = ip.length - 1; i >= 0; i--) {
-                emptystr += ip.charAt(i);
-                console.log(emptystr);
-            }
-            document.getElementById("output").innerHTML = emptystr;
-        });
+        document.getElementById("bt3").addEventListener("click", function () {
+                    var ip = document.getElementById("evennum").value;
+                    var ipt = ip.split("");
+                    var emptystr = "";
+                    //     var vowels = ["a", "e", "i", "o", "u"];
+                    //     for (var i = 0; i < ipt.length; i++) {
+                    //         if (!vowels.includes(ipt[i])) {
+
+                    //         } else {
+                    //             emptystr += ipt[i]
+                    //         }
+                    //     }
+                    //     console.log(emptystr);
+                    // });
+
+                    // var neg = ["a", "e", "i", "o", "u"];
+                    // console.log(ip);
+                    // console.log(ipt);
+                    for (var i = 0; i < ipt.length; i++) {
+
+                        //         if (ipt[i] === "a") {
+                        //             // console.log();
+                        //         } else if (ipt[i] === "e") {
+                        //             // emptystr += ipt[i];
+                        //         } else if (ipt[i] === "i") {
+                        //             // emptystr += ipt[i];
+                        //         } else if (ipt[i] === "o") {
+                        //             // emptystr += ipt[i];
+                        //         } else if (ipt[i] === "u") {
+                        //             // emptystr += ipt[i];
+                        //         } else {
+                        //             emptystr += ipt[i]
+                        //         }
+                        //     }
+                        //     console.log(emptystr);
+                        // });
+                        //         if (ipt[i] === 'a' || ipt[i] === 'e' || ipt[i] === 'i' || ipt[i] === 'o' || ipt[i] === 'u') {
+
+                        //         } else {
+                        //             emptystr += ipt[i]
+                        //         }
+                        //         console.log(emptystr);
+                        //     }
+                        // });
+
+                        //         if (ipt[i] !== 'a' && ipt[i] !== 'e' && ipt[i] !== 'i' && ipt[i] !== 'o' && ipt[i] == 'u') {
+                        //             emptystr += ipt[i]
+                        //         }
+
+
+                        //         console.log(emptystr);
+                        //     }
+                        // });
+
+
+
+                        // document.getElementById("bt3").addEventListener("click", function () {
+                        //     var ip = document.getElementById("evennum").value;
+                        //     var emptystr = "";
+                        //     var neg = "a"
+
+                        //     for (var i = 0; i <= ip.length; i++) {
+                        //         if (ip.charAt(i) !== neg) {
+
+                        //             emptystr += ip.charAt(i);
+                        //         }
+
+                        //     }
+                        //     console.log(emptystr);
+                        // });
+
+
+
+                        // document.getElementById("bt1").addEventListener("click", function () {
+                        //     var ip = document.getElementById("str").value;
+                        //     var emptystr = "";
+                        //     for (var i = ip.length - 1; i >= 0; i--) {
+                        //         emptystr += ip.charAt(i);
+                        //         console.log(emptystr);
+                        //     }
+                        //     document.getElementById("output").innerHTML = emptystr;
+                        // // });
+
+                        // document.getElementById("bt2").addEventListener("click", function () {
+                        //     var ipt = document.getElementById("pld").value;
+                        //     var ipt1 = ipt.split(" ");
+                        //     var ipt2 = ipt1.reverse();
+                        //     var ipt3 = ipt2.join("")
+                        //     console.log(ipt3);
+
+                        // var output = "";
+                        // for (var i = 0; i < evennum.length; i++) {
+                        //     if (i % 2 != 0) {
+                        //         output += evennum[i].toUpperCase();
+                        //     } else {
+                        //         output += evennum[i].toLowerCase();
+                        //     }
+                        // }
+
+
+                        // document.getElementById("bt2").addEventListener("click", function () {
+                        //     var ipt = document.getElementById("pld").value;
+                        //     var emptystr = "";
+                        //     for (var i = ipt.length - 1; i >= 0; i--) {
+                        //         emptystr += ipt.charAt(i);
+                        //     }
+                        //     if (ipt === emptystr) {
+                        //         console.log("Yes");
+                        //     } else {
+                        //         console.log("NO");
+                        //     }
+                        // });
+
+
+
+
+                        // document.getElementById("bt3").addEventListener("click", function () {
+                        //     var output = "";
+                        //     var changingcase = document.getElementById("evennum").value;
+                        //     for (i = 0; i <= changingcase.length; i++) {
+
+                        //         if (i % 2 == 0) {
+
+                        //             output += changingcase.charAt(i).toUpperCase();
+                        //         } else {
+                        //             output += changingcase.charAt(i).toLowerCase();
+                        //         }
+                        //     }
+                        //     console.log(output);
+                        // });
+                        // document.getElementById("op1").innerHTML = output;
     </script>
 </body>
 

@@ -1,0 +1,41 @@
+      <!DOCTYPE html>
+      <html lang="en">
+
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+      </head>
+
+      <body>
+
+          <input type="text" name="enter a string" id="evennum">
+          <button type="button" id="bt3">submit</button>
+          </div>
+          <p id="op1"></p>
+
+          <script>
+              document.getElementById("bt3").addEventListener("click", function () {
+                  var ip = document.getElementById("evennum").value;
+                  var ipt = ip.split("");
+                  var emptystr = "";
+
+                  for (var i = 0; i < ipt.length; i++) {
+
+                      for (var i = 0; i < ipt.length; i++) {
+                          if (ipt[i] === 'a' || ipt[i] === 'e' || ipt[i] === 'i' || ipt[i] === 'o' || ipt[i] ===
+                              'u') {
+                              emptystr += ipt[i].toUpperCase();
+                              //   includes(ipt[i])
+                          } else {
+                              emptystr += ipt[i]
+                          }
+                      }
+                      console.log(emptystr);
+                  }
+              });
+          </script>
+      </body>
+
+      </html>
