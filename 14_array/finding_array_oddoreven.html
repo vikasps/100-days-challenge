@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="input_data">
+    <div><button id="submit">submit</button>
+        <button type="button" id="odd">odd</button>
+        <button type="button" id="even">even</button>
+        <button type="button" id="clear">clear</button></div>
+</body>
+<script>
+    var emptyarr = [];
+    var oddarr = [];
+    var evenarr = [];
+    document.getElementById("submit").addEventListener("click", function () {
+
+        var submit = document.getElementById("input_data").value;
+        if (submit !== "") {
+
+            emptyarr.push(submit);
+        }
+
+        console.log(emptyarr);
+        document.getElementById('input_data').value = '';
+    });
+
+    document.getElementById("even").addEventListener("click", function () {
+        evenarr = [];
+        for (i = 0; i < emptyarr.length; i++) {
+            if (emptyarr[i] % 2 === 0) {
+                evenarr.push(emptyarr[i]);
+
+            }
+
+        }
+        console.log(evenarr);
+    });
+
+    document.getElementById("odd").addEventListener("click", function () {
+        oddarr = [];
+        for (i = 0; i < emptyarr.length; i++) {
+            if (emptyarr[i] % 2 !== 0) {
+                oddarr.push(emptyarr[i]);
+
+            }
+        }
+        console.log(oddarr);
+    });
+
+    document.getElementById('clear').addEventListener("click", function () {
+        emptyarr = [];
+        console.log(emptyarr);
+    });
+</script>
+
+</html>
