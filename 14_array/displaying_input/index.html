@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><input type="text" name="" id="inputdata">
+        <button id="submit">submit</button></div>
+    <p id="output"></p>
+    <script>
+        var emptystr = '';
+        document.getElementById("submit").addEventListener("click", function () {
+            var ipt = document.getElementById("inputdata").value;
+            document.getElementById("inputdata").value = "";
+            // console.log(ipt);
+            if (ipt === "clear") {
+                // console.log(ipt);
+
+                // document.getElementById("output") = "";
+                emptystr = "";
+
+            } else {
+                emptystr = emptystr + ' ' + ipt;
+            }
+            document.getElementById("output").innerHTML = emptystr;
+        });
+
+
+        // var op = document.getElementById("output").va;
+        // var outputdata = ipt.value + op.value;
+        // document.getElementById("output").innerHTML = outputdata;
+
+
+        // // var op = document.getElementById("output").value;
+        // console.log(ipt);
+        // var emptystr = "";
+        // emptystr += ipt;
+        // document.getElementById("output").innerHTML = emptystr;
+        // // var outputdata = ipt + document.getElementById("output").value;
+        // console.log(outputdata);
+        // document.getElementById("output").innerHTML = outputdata;
+
+        // document.getElementById("output").innerHTML = outputdata;
+
+        // document.getElementById("output") = "";
+        // document.getElementById("output").innerHTML = ipt;
+    </script>
+</body>
+
+</html>

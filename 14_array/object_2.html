@@ -13,20 +13,30 @@
         <input id="key" type="text" placeholder="key">
         <input id="values" type="text" placeholder="value">
         <button id="submit">submit</button>
+        <p id="display"></p>
     </div>
     <script>
+        var data;
+        var person = {};
+        // var displaying = "";
+
         document.getElementById("submit").addEventListener("click", function () {
             var key = document.getElementById("key").value;
             var values = document.getElementById("values").value;
+            // if (values === typeof Number) {
+            //     Number(values);
+            // };
+            var displaying = "";
 
-            // person.key=values,
-            var person = {
-                key: values,
+            person[key] = values;
+            for (data in person) {
+                console.log(data);
+                displaying += data + ":" + person[data] + ' ';
             };
-            console.log(person);
 
-
-
+            // var output = JSON.stringify(person);
+            // document.getElementById('display').innerHTML = output;
+            document.getElementById('display').innerHTML = displaying;
             document.getElementById('key').value = "";
             document.getElementById('values').value = "";
         });
@@ -34,3 +44,11 @@
 </body>
 
 </html>
+
+
+<!-- var age = "language";
+    console.log([age]);
+        var myclr = "corggtgtglorffdfdfdfdf";
+        var blue = "blfffgrue";
+person[blue] = myclr;
+        person[myclr] = "red" -->
