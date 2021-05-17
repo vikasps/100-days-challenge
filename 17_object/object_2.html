@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input id="key" type="text" placeholder="key">
+        <input id="values" type="text" placeholder="value">
+        <button id="submit">submit</button>
+        <p id="display"></p>
+    </div>
+    <script>
+        var data;
+        var person = {};
+        // var displaying = "";
+
+        document.getElementById("submit").addEventListener("click", function () {
+            var key = document.getElementById("key").value;
+            var values = document.getElementById("values").value;
+            // if (values === typeof Number) {
+            //     Number(values);
+            // };
+            var displaying = "";
+
+            person[key] = values;
+            for (data in person) {
+                console.log(data);
+                displaying += data + ":" + person[data] + ' ';
+            };
+
+            // var output = JSON.stringify(person);
+            // document.getElementById('display').innerHTML = output;
+            document.getElementById('display').innerHTML = displaying;
+            document.getElementById('key').value = "";
+            document.getElementById('values').value = "";
+        });
+    </script>
+</body>
+
+</html>
+
+
+<!-- var age = "language";
+    console.log([age]);
+        var myclr = "corggtgtglorffdfdfdfdf";
+        var blue = "blfffgrue";
+person[blue] = myclr;
+        person[myclr] = "red" -->
