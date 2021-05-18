@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="myfunction()" type="button">submit</button>
+    </div>
+
+    <table id="table">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>blood-group</th>
+        </tr>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var person = [{
+            name: "vikas",
+            age: "24",
+            blood: "o+ve",
+        }, ];
+
+        function myfunction() {
+            const table = document.getElementById("table");
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+<td>${person[0].name}</td>
+<td>${person[0].age}</td>
+<td>${person[0].blood}</td>
+`;
+            table.appendChild(tr);
+        }
+    </script>
+</body>
+
+</html>
