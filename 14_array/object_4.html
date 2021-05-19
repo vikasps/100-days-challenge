@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+</head>
+
+<body>
+    <input id="name" placeholder="name" type="text">
+    <input id="age" placeholder="age" type="text" name="">
+    <input id="blood_group" type="text" placeholder="blood_group" name="">
+
+    <div>
+        <button onclick="myfunction()" type="button">submit</button>
+    </div>
+    <table id="table">
+        <tr>
+            <th>name</th>
+            <th>age</th>
+            <th>blood-group</th>
+        </tr>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var data;
+        var person = [];
+
+        function myfunction() {
+            var name1 = document.getElementById("name").value;
+            var age1 = document.getElementById("age").value;
+            var blood_group1 = document.getElementById("blood_group").value;
+            var displaying = "";
+            var obj = {
+                name: name1,
+                age: age1,
+                blood_group: blood_group1,
+            };
+            person.push(obj);
+            // console.log(person);
+
+            for (i = 0; i < person.length; i++) {
+                console.log(person[0]);
+            }
+            // for (data in obj) {
+            //     console.log(data);
+            //     displaying += obj[data];
+            // };
+            // console.log(displaying);
+
+            const table = document.getElementById("table");
+            const tr = document.createElement("tr");
+            console.log(person);
+            tr.innerHTML = `
+            <td>${person[0].name}</td>
+            <td>${person[0].age}</td>
+            <td>${person[0].blood_group}</td>
+            `;
+            table.appendChild(tr);
+        };
+        //
+        // var myclr = "corggtgtglorffdfdfdfdf";
+        // person[myclr] = "red";
+        // // output - - - -  corggtgtglorffdfdfdfdf: "red"
+        // var data;
+        // var person = {};
+        // // var displaying = "";
+
+        // document.getElementById("submit").addEventListener("click", function () {
+        //     var key = document.getElementById("key").value;
+        //     var values = document.getElementById("values").value;
+
+        //     var displaying = "";
+
+        //     person[key] = values;
+        //     for (data in person) {
+        //         console.log(data);
+        //         displaying += data + ":" + person[data] + ' ';
+        //     };
+
+        //     // var output = JSON.stringify(person);
+        //     // document.getElementById('display').innerHTML = output;
+        //     document.getElementById('display').innerHTML = displaying;
+        //     document.getElementById('key').value = "";
+        //     document.getElementById('values').value = "";
+        // });
+
+
+        // var myclr = "corggtgtglorffdfdfdfdf";
+        // person[myclr] = "red";
+
+        // person[blue] = myclr;
+        // person[myclr] = "red";
+        // person.push("name1");
+
+        // var name = "name1";
+        // person[name] = "name1";
+        // console.log(person);
+    </script>
+
+</body>
+
+</html>
