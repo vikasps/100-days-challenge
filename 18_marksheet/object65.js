@@ -15,6 +15,11 @@ if (myArr !== null) {
   person = [];
 }
 
+var display_1 = document.getElementById("display_11");
+var display_2 = document.getElementById("display_22");
+var display_3 = document.getElementById("display_33");
+var display_4 = document.getElementById("display_44");
+
 function myfunction() {
   var name = document.getElementById("name").value;
   var id = document.getElementById("class").value;
@@ -30,14 +35,9 @@ function myfunction() {
   // var tempTamil = localStorage.getItem('tamilMark');
   // console.log(tempTamil);
 
-  var display_1 = document.getElementById("display_11");
-  var display_2 = document.getElementById("display_22");
-  var display_3 = document.getElementById("display_33");
-  var display_4 = document.getElementById("display_44");
-
   if (name === "" || id === "" || tamil === "" || english === "") {
     display_1.style.display = "block";
-    dispFtemplay_2.style.display = "block";
+    display_2.style.display = "block";
     display_3.style.display = "block";
     display_4.style.display = "block";
   }
@@ -95,6 +95,7 @@ function myfunction() {
     }
     index_no = null;
     edit_mode = false;
+    clearing_dataz();
   } else {
     var details = {
       Name: name,
@@ -124,11 +125,14 @@ function myfunction() {
 // console.log(my_class);
 
 // console.log(myArr[0].Name);
-function updating_data() {
-  var btntext = document.getElementById("submit");
-  btntext.innerHTML = "Update";
+var clearingdata = document.querySelector(".submitting_btn");
 
-  var clearingdata = document.querySelector(".submitting_btn");
+function updating_data() {
+  // debugger;
+  console.log("kjhgfdsa");
+  var btntext = document.getElementById("submit");
+  console.log(btntext);
+  btntext.innerHTML = "Update";
   var clearbtn = document.createElement("button");
   clearbtn.innerHTML = "Cancel";
 
@@ -136,24 +140,35 @@ function updating_data() {
   clearbtn.className = "btn btn-info";
   clearbtn.setAttribute("id", "clearing_id");
   clearingdata.appendChild(clearbtn);
-  clearbtn.onclick = function clearing_dataz() {
-    document.getElementById("name").value = "";
-    document.getElementById("class").value = "";
-    document.getElementById("tamil").value = "";
-    document.getElementById("english").value = "";
+  clearbtn.addEventListener("click", function () {
+    clearing_dataz();
+  });
+  // clearing_dataz();
+}
 
-    clearbtn.remove();
-    this.remove();
-    // console.log(e);
-    edit_mode = false;
+function clearing_dataz() {
+  document.getElementById("name").value = "";
+  document.getElementById("class").value = "";
+  document.getElementById("tamil").value = "";
+  document.getElementById("english").value = "";
+  console.log("hai");
+  // clearbtn.remove();
 
-    changing_btn();
-  };
+  // console.log(e);
+  index_no = null;
+  edit_mode = false;
+  changing_btn();
+  update_clearing_btn();
 }
 
 function changing_btn() {
   var btntext = document.getElementById("submit");
   btntext.innerHTML = "submit";
+}
+
+function update_clearing_btn() {
+  var update_clearing = document.getElementById("clearing_id");
+  update_clearing.remove();
 }
 
 function editing(e) {
@@ -164,13 +179,13 @@ function editing(e) {
     updating_data();
   }
   edit_mode = true;
-
+  clearing_input_error();
   var trData = e.parentNode.parentNode;
-  console.log(trData, "asdfghjkl;sdfghjklsdfghjklsdfghjkl");
-  console.log(e);
+  // console.log(trData, "asdfghjkl;sdfghjklsdfghjklsdfghjkl");
+  // console.log(e);
   index_no = trData.cells[2].getAttribute("data-index");
 
-  console.log(index_no);
+  // console.log(index_no);
   // if () {
   //     person.push(details);
   //     edit_mode = false;
@@ -285,4 +300,10 @@ function myfunction_2(person) {
   document.getElementById("class").value = "";
   document.getElementById("tamil").value = "";
   document.getElementById("english").value = "";
+}
+function clearing_input_error() {
+  display_1.style.display = "none";
+  display_2.style.display = "none";
+  display_3.style.display = "none";
+  display_4.style.display = "none";
 }
