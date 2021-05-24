@@ -16,21 +16,43 @@
     <h1 class="text-center bg-success">Marksheet</h1>
 
     <header class="mt-3">
-        <div class="name_1 "> <input class="input" type="text" id="name" placeholder="Name" data-type="name">
-            <span id="display_11">invalid name input</span></div>
+        <h3>Student - Detail</h3>
+        <div class="stdndetail">
 
-        <div class="class_1"> <input type="text" id="class" maxlength="2" minlength="0" placeholder="class"
-                data-type="class">
-            <span id="display_22">invalid class input</span></div>
+            <div class="name_1 "> <input class="input-field" type="text" id="name" placeholder="Name">
+                <span class="invalid_error" id="display_11">invalid name input</span></div>
 
-        <div class="tamil_1"> <input type="number" maxlength="3" minlength="0" name="" id="tamil"
-                placeholder="Tamil-mark" data-type="tamil">
-            <span id="display_33">invalid Tamil-Mark input</span></div>
-        <div class="english_1"> <input type="number" id="english" maxlength="3" minlength="0" placeholder="English-mark"
-                data-type="english">
-            <span id="display_44">invalid English input</span></div>
-        <div class="submitting_btn"> <button type="button" class="btn btn-info " id="submit"
-                onclick="myfunction()">submit</button>
+            <div class="class_1"> <input class="input-field" type="text" id="id" maxlength="2" minlength="0"
+                    placeholder="class" data-type="class">
+                <span class="invalid_error" id="display_22">invalid class input</span></div>
+        </div>
+        <h3>Subject-Details</h3>
+        <div class="sbjdetail">
+
+            <div class="tamil_1"> <input class="input-field" type="number" id="tamil" maxlength="2" minlength="0"
+                    placeholder="Tamil-mark">
+                <span class="invalid_error" id="display_33">invalid Tamil-Mark input</span></div>
+
+            <div class="english_1"> <input class="input-field" type="number" id="english" maxlength="2" minlength="0"
+                    placeholder="English-mark">
+                <span class="invalid_error" id="display_44">invalid English input</span></div>
+
+
+            <div class="maths_1"> <input class="input-field" type="number" id="maths" maxlength="2" minlength="0"
+                    placeholder="Maths-mark">
+                <span class="invalid_error" id="display_44">invalid Maths input</span></div>
+
+            <div class="science_1"> <input class="input-field" type="number" id="science" maxlength="2" minlength="0"
+                    placeholder="Science-mark">
+                <span class="invalid_error" id="display_44">invalid Science input</span></div>
+
+            <div class="socialscience_1"> <input class="input-field" type="number" id="socialscience" maxlength="2"
+                    minlength="0" placeholder="Social-Science-mark">
+                <span class="invalid_error" id="display_44">invalid Social-Science input</span></div>
+        </div>
+
+        <div class="submitting-btn"> <button type="button" class="btn btn-info " id="submit"
+                onclick="handleFormSubmit()">submit</button>
         </div>
     </header>
 

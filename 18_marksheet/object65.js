@@ -1,16 +1,14 @@
 var person;
 
-var myArr = JSON.parse(localStorage.getItem("personArr"));
+var storedArr = JSON.parse(localStorage.getItem("personArr"));
 
 var edit_mode = false;
 
 var index_no = null;
 
-// console.log(myArr);
-if (myArr !== null) {
-  person = myArr;
-  myfunction_2(person);
-  //table populate
+if (storedArr !== null) {
+  person = storedArr;
+  tablerendering(person);
 } else {
   person = [];
 }
@@ -20,20 +18,11 @@ var display_2 = document.getElementById("display_22");
 var display_3 = document.getElementById("display_33");
 var display_4 = document.getElementById("display_44");
 
-function myfunction() {
+function handleFormSubmit() {
   var name = document.getElementById("name").value;
-  var id = document.getElementById("class").value;
+  var id = document.getElementById("id").value;
   var tamil = document.getElementById("tamil").value;
   var english = document.getElementById("english").value;
-
-  // console.log('tamil', tamil);
-  // console.log('english', english);
-  // console.log("name", name);
-  // console.log("id", id);
-
-  // localStorage.setItem('tamilMark', tamil);
-  // var tempTamil = localStorage.getItem('tamilMark');
-  // console.log(tempTamil);
 
   if (name === "" || id === "" || tamil === "" || english === "") {
     display_1.style.display = "block";
@@ -74,9 +63,6 @@ function myfunction() {
   var total = tamil + english;
   var average = total / 2;
 
-  // console.log(tamil, "tamil");
-  // console.log(english, "english");
-
   if (edit_mode) {
     console.log("edit mode");
 
@@ -95,7 +81,7 @@ function myfunction() {
     }
     index_no = null;
     edit_mode = false;
-    clearing_dataz();
+    clearingData();
   } else {
     var details = {
       Name: name,
@@ -112,176 +98,80 @@ function myfunction() {
     person.push(details);
   }
   localStorage.setItem("personArr", JSON.stringify(person));
-  myfunction_2(person);
+  tablerendering(person);
 }
 
-// localStorage.setItem("array", JSON.stringify(person));
+var clrData = document.querySelector(".submitting_btn");
 
-// localStorage.clear()
-
-// localStorage.setItem("my_class", id)
-// var my_class = localStorage.getItem("my_class");
-
-// console.log(my_class);
-
-// console.log(myArr[0].Name);
-var clearingdata = document.querySelector(".submitting_btn");
-
-function updating_data() {
-  // debugger;
-  console.log("kjhgfdsa");
-  var btntext = document.getElementById("submit");
-  console.log(btntext);
-  btntext.innerHTML = "Update";
-  var clearbtn = document.createElement("button");
-  clearbtn.innerHTML = "Cancel";
-
-  clearbtn.type = "button";
-  clearbtn.className = "btn btn-info";
-  clearbtn.setAttribute("id", "clearing_id");
-  clearingdata.appendChild(clearbtn);
-  clearbtn.addEventListener("click", function () {
-    clearing_dataz();
+function handleUpdatingForm() {
+  updtTextChangingBtn();
+  var clrBtn = document.createElement("button");
+  clrBtn.innerHTML = "Cancel";
+  clrBtn.type = "button";
+  clrBtn.className = "btn btn-info";
+  clrBtn.setAttribute("id", "clrId");
+  clrData.appendChild(clrBtn);
+  clrBtn.addEventListener("click", function () {
+    clearingData();
   });
-  // clearing_dataz();
 }
 
-function clearing_dataz() {
-  document.getElementById("name").value = "";
-  document.getElementById("class").value = "";
-  document.getElementById("tamil").value = "";
-  document.getElementById("english").value = "";
-  console.log("hai");
-  // clearbtn.remove();
-
-  // console.log(e);
+function clearingData() {
+  emptyingInput();
   index_no = null;
   edit_mode = false;
-  changing_btn();
-  update_clearing_btn();
+  sbmTextChangingBtn();
+  updRmvBtn();
 }
 
-function changing_btn() {
+function sbmTextChangingBtn() {
   var btntext = document.getElementById("submit");
   btntext.innerHTML = "submit";
 }
-
-function update_clearing_btn() {
-  var update_clearing = document.getElementById("clearing_id");
-  update_clearing.remove();
+function updtTextChangingBtn() {
+  var btntext = document.getElementById("submit");
+  btntext.innerHTML = "Update";
+}
+function updRmvBtn() {
+  var updClr = document.getElementById("clrId");
+  updClr.remove();
 }
 
-function editing(e) {
-  // console.log(e);
-  // debugger;
-
+function handleEditRow(e) {
   if (edit_mode == false) {
-    updating_data();
+    handleUpdatingForm();
   }
   edit_mode = true;
-  clearing_input_error();
+  rmvInptErr();
   var trData = e.parentNode.parentNode;
-  // console.log(trData, "asdfghjkl;sdfghjklsdfghjklsdfghjkl");
-  // console.log(e);
   index_no = trData.cells[2].getAttribute("data-index");
 
-  // console.log(index_no);
-  // if () {
-  //     person.push(details);
-  //     edit_mode = false;
-
-  // } else {
-  //     edit_mode = false;
-  // }
-
-  // for (i = 0; i < person.length; i++) {
-  //     i === indexof(i);
-  // }
-  // person[i].name = name;
-  // var myValues = new Array();
-  // var valueAtIndex1 = person[i];
-  // console.log(valueAtIndex1);
-  // SVGZoomAndPan
-  // var pid = e;
-  // // console.log("hai1234");
-  // console.log(pid);
-
-  // console.log(trData);
-  // for (i = 0; i < 4; i++) {
-  //     var x = trData.cells[i].innerHTML;
-  //     // console.log('xxx', x);
-  // }
-  // //    var data1 = trData.cells[0].value
-  // //     trData.cells[1].value
-  // //     trData.cells[2].value
-  // //     trData.cells[3].value
-
   document.getElementById("name").value = trData.cells[0].innerHTML;
-  document.getElementById("class").value = trData.cells[1].innerHTML;
+  document.getElementById("id").value = trData.cells[1].innerHTML;
   document.getElementById("tamil").value = trData.cells[2].innerHTML;
   document.getElementById("english").value = trData.cells[3].innerHTML;
 }
 
-function deleting(e) {
-  console.log("asfdgfghf");
-  // var remove_row = e.parentNode.parentNode;
-  // // console.log(remove_row, "heyyyyyyyyyyyy");
-  // remove_row.remove();
-
+function handleDeleteRow(e) {
   var trData = e.parentNode.parentNode;
   console.log(trData);
   index_no = trData.cells[2].getAttribute("data-index");
   person.splice(index_no, 1);
 
-  // console.log(person);
   localStorage.setItem("personArr", JSON.stringify(person));
-  myfunction_2(person);
+  tablerendering(person);
 }
 
-// console.log(data - index[1], "12345");
-// console.log(person, "baaskfboaahf");
-
-// for (var i = person.length - 1; i >= 0; i--) {
-//     var removing_data = remove_row.data - index[i]
-//     if (person[i] === removing_data) {
-
-//         person.splice(i, i);
-//     }
-
-// localStorage.removeItem('personArr[e]');
-// remove_row.parentNode.removeChild();
-// deleteRow(0)
-// index_no = trData.cells[2].getAttribute('data-index');
-// document.getElementById("tr").remove();
-
-// document.getElementsByTagName("tr")[i].remove();
-// localStorage.removeItem("remove_row");
-
-// var table = document.getElementById("tr");
-
-// localStorage.clear();
-
-// };
-
-// tr.td.first child.GETARRRIRTUBE.indexof(0).
-
-function myfunction_2(person) {
-  // console.log(person, "person");
+function tablerendering(person) {
   const table = document
     .getElementById("creating_table")
     .getElementsByTagName("tbody")[0];
   table.innerHTML = "";
 
   for (i = 0; i < person.length; i++) {
-    // console.log(person[i]);
-    // person[0];
     const tr = document.createElement("tr");
-    // console.log(person);
 
     tr.setAttribute("data-index", i);
-    // tr.setAttribute('data-random', Math.random());
-    // tr.setAttribute('data-myName', 'vikas');
-
     tr.innerHTML = `
     <td scope="col">${person[i].Name}</td>
     <td scope="col">${person[i].Id}</td>
@@ -290,20 +180,22 @@ function myfunction_2(person) {
     <td scope="col">${person[i].English}</td>
     <td scope="col">${person[i].Total}</td>
     <td scope="col">${person[i].Average}</td>
-    <td scope="col"><button type="button" class="btn btn-info"  onclick=editing(this) class="edit">Edit</button></td>
-    <td scope="col"><button type="button" class="btn btn-info"  onclick=deleting(this) class="edit">Delete</button></td>
+    <td scope="col"><button type="button" class="btn btn-info"  onclick=handleEditRow(this) class="edit">Edit</button></td>
+    <td scope="col"><button type="button" class="btn btn-info"  onclick=handleDeleteRow(this) class="edit">Delete</button></td>
     `;
     table.appendChild(tr);
   }
-
-  document.getElementById("name").value = "";
-  document.getElementById("class").value = "";
-  document.getElementById("tamil").value = "";
-  document.getElementById("english").value = "";
 }
-function clearing_input_error() {
+function rmvInptErr() {
   display_1.style.display = "none";
   display_2.style.display = "none";
   display_3.style.display = "none";
   display_4.style.display = "none";
+}
+
+function emptyingInput() {
+  document.getElementById("name").value = "";
+  document.getElementById("id").value = "";
+  document.getElementById("tamil").value = "";
+  document.getElementById("english").value = "";
 }

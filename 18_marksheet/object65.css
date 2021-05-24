@@ -10,13 +10,22 @@
 body {
   background-color: lemonchiffon;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  max-width: 80%;
+  margin: auto;
 }
 
 body > header {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
 }
 
+.input-field {
+  width: 175px;
+  margin: 10px;
+  margin-top: 10px;
+}
 /* .hidden_div {
 display: none;
 } */
@@ -24,6 +33,12 @@ display: none;
 #table {
     width: 100%;
 } */
+.stdndetail {
+  display: flex;
+}
+.sbjdetail {
+  display: flex;
+}
 
 .name_1,
 .class_1,
@@ -38,6 +53,9 @@ display: none;
     height: 30px;
 } */
 
-span {
+.invalid_error {
   display: none;
+}
+.submitting-btn {
+  margin: 0 auto;
 }
