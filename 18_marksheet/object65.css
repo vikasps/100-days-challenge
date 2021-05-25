@@ -10,12 +10,13 @@
 body {
   background-color: lemonchiffon;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-
   max-width: 80%;
-  margin: auto;
+  margin: 0 auto;
+  /* display: flex;
+  flex-direction: column; */
 }
 
-body > header {
+header {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -26,13 +27,6 @@ body > header {
   margin: 10px;
   margin-top: 10px;
 }
-/* .hidden_div {
-display: none;
-} */
-/*
-#table {
-    width: 100%;
-} */
 .stdndetail {
   display: flex;
 }
@@ -43,19 +37,25 @@ display: none;
 .name_1,
 .class_1,
 .tamil_1,
-.english_1 {
+.english_1,
+.maths_1,
+.science_1,
+.socialscience_1 {
   display: flex;
   flex-direction: column;
   color: red;
 }
 
-/* button {
-    height: 30px;
-} */
-
 .invalid_error {
   display: none;
+  padding-left: 10px;
 }
-.submitting-btn {
+.sbtbtn {
   margin: 0 auto;
+  margin-top: 10px;
+}
+.dltbtn .editbtn {
+}
+.tr-section > td {
+  padding-left: 10px;
 }

@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./object65.css">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./object65.css">
 </head>
 
 <body>
-
+    <!-- <div class="first"></div> -->
     <h1 class="text-center bg-success">Marksheet</h1>
 
     <header class="mt-3">
@@ -40,18 +41,18 @@
 
             <div class="maths_1"> <input class="input-field" type="number" id="maths" maxlength="2" minlength="0"
                     placeholder="Maths-mark">
-                <span class="invalid_error" id="display_44">invalid Maths input</span></div>
+                <span class="invalid_error" id="display_55">invalid Maths input</span></div>
 
             <div class="science_1"> <input class="input-field" type="number" id="science" maxlength="2" minlength="0"
                     placeholder="Science-mark">
-                <span class="invalid_error" id="display_44">invalid Science input</span></div>
+                <span class="invalid_error" id="display_66">invalid Science input</span></div>
 
             <div class="socialscience_1"> <input class="input-field" type="number" id="socialscience" maxlength="2"
                     minlength="0" placeholder="Social-Science-mark">
-                <span class="invalid_error" id="display_44">invalid Social-Science input</span></div>
+                <span class="invalid_error" id="display_77">invalid Social-Science input</span></div>
         </div>
 
-        <div class="submitting-btn"> <button type="button" class="btn btn-info " id="submit"
+        <div class="sbtbtn" id="sbtbtn"> <button type="button" class="btn btn-primary " id="submit"
                 onclick="handleFormSubmit()">submit</button>
         </div>
     </header>
@@ -59,18 +60,22 @@
     <table class="table mt-3" id="creating_table">
         <thead class="bg-info">
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Id</th>
-                <th scope="col">Tamil</th>
-                <th scope="col">English</th>
-                <th scope="col">Total</th>
-                <th scope="col">Average</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
+                <th scope="col">name</th>
+                <th scope="col">id</th>
+                <th scope="col">tamil</th>
+                <th scope="col">english</th>
+                <th scope="col">maths</th>
+                <th scope="col">science</th>
+                <th scope="col">socialscience</th>
+                <th scope="col">total</th>
+                <th scope="col">average</th>
+                <th scope="col">edit</th>
+                <th scope="col">delete</th>
             </tr>
         </thead>
         <tbody></tbody>
     </table>
+    <!-- <div class="footer"></div> -->
     <script src="./object65.js"></script>
 </body>
 
