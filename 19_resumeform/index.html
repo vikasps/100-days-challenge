@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="d-flex flex-column align-items-center w-auto bg-light">
+    <div class="row-fluid">
+        <form action="#" method="post" class="well form-inline">
+            <fieldset>
+                <div class="control-group d-flex flex-column  justify-content-evenly ">
+                    <label class="control-label" for="FirstName">Name</label>
+                    <div class="controls">
+                        <input id="FirstName" name="FirstName" placeholder="Firstname" type="text" value="" />
+                        <input id="LastName" name="LastName" placeholder="Lastname" type="text" value="" />
+                    </div>
+                </div>
+                <div class="radioBtn  d-flex justify-content-evenly w-75 mt-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                            checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            female </label>
+                    </div>
+                </div>
+
+                <div class="contact-details d-flex justify-content-evenly w-100 ">
+                    <div class="mb-3 ">
+                        <label for="exampleFormControlInput1" class="form-label">Phone-Number</label>
+                        <input type="text" class="form-control contact-phone" id="phonenumber"
+                            placeholder="Phone-Number">
+                    </div>
+
+                    <div class="mb-3 ">
+                        <label for="exampleFormControlInput1" class="form-label ">Email address</label>
+                        <input type="email" class="form-control contact-email" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                </div>
+    </div>
+    </div>
+
+
+    <div class="control-group w-50 ">
+        <label class="control-label" for="AddressLine1">Address</label>
+        <div class="controls w-100">
+            <input class="input-xxlarge w-100 " id="AddressLine" name="AddressLine" placeholder="AddressLine"
+                type="text" value="" />
+        </div>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked">non-indian</label>
+    </div>
+    <div class="control-group  w-50">
+        <label class="control-label" for="AddressLine1">Address</label>
+        <div class="controls">
+            <input class="input-xxlarge w-100" id="AddressLine" name="AddressLine" placeholder="AddressLine" type="text"
+                value="" />
+        </div>
+    </div>
+
+    <div class="adrspin d-flex  justify-content-around w-50 mt-3 ">
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle p-1 h-75" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                select state
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">tamil-nadu</a></li>
+                <li><a class="dropdown-item" href="#">kerala</a></li>
+                <li><a class="dropdown-item" href="#">karnataka</a></li>
+                <li><a class="dropdown-item" href="#">andra-pradesh</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+        </div>
+
+        <input id="selectedstate" class=" h-100 p-2" type="text">
+
+
+        <div class="mb-3">
+            <input type="text" class="form-control pncde " id="pincode" placeholder="Pin-code">
+        </div>
+    </div>
+    <div class="checkBox d-flex">
+        <label class="control-label" for="know-language">Known Language</label>
+        <div class="form-check ">
+            <input class="   form-check-input" type="checkbox" value="" id="flexCheckDefault" name="check"
+                onclick="onlyOne(this)">
+            <label class="form-check-label" for="flexCheckDefault">
+                tamil
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked name="check"
+                onclick="onlyOne(this)">
+            <label class="form-check-label" for="flexCheckChecked">
+                english
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked name="check"
+                onclick="onlyOne(this)">
+            <label class="form-check-label" for="flexCheckChecked">
+                others
+            </label>
+        </div>
+    </div>
+
+
+    </div>
+    <div class="mb-3 w-50">
+        <label for="exampleFormControlTextarea1" class=" form-label ml-">Tell About Yourself</label>
+        <textarea class="form-control w-100 h-100" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+
+
+    <label for="exampleFormControlTextarea1" class="form-label ml-">HTML 5</label>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">1</label>
+    </div>
+    <div class="skils d-flex flex-row">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">3</label>
+        </div>
+        <label for="exampleFormControlTextarea1" class="form-label ml-">CSS 3</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">3</label>
+        </div>
+        <label for="exampleFormControlTextarea1" class="form-label ml-">JAVA SCRIPT</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">3</label>
+        </div>
+    </div>
+
+
+
+    </fieldset>
+    </form>
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
