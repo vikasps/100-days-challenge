@@ -4,8 +4,8 @@ var resumeform;
 
 function handling_submitting_form() {
   console.log("haiiiiii");
-  var firstname = document.getElementById("inputfirstname").Value;
-  var lastname = document.getElementById("inputlastname").Value;
+  var firstname_1 = document.getElementById("1").Value;
+  var lastname_1 = document.getElementById("inputlastname").Value;
   var phonenumber = document.getElementById("inputphonenumber").value;
   var email = document.getElementById("inputEmail").value;
 
@@ -32,8 +32,8 @@ function handling_submitting_form() {
   var sppc = document.getElementById("sp_pc");
 
   if (
-    firstname === "" ||
-    lastname === "" ||
+    firstname_1 === "" ||
+    lastname_1 === "" ||
     email === "" ||
     password === "" ||
     phonenumber === "" ||
@@ -55,13 +55,13 @@ function handling_submitting_form() {
     sppc.style.display = "block";
   }
 
-  if (firstname === "") {
+  if (firstname_1 === "") {
     spfn.style.display = "block";
     return false;
   } else {
     spfn.style.display = "none";
   }
-  if (lastname === "") {
+  if (lastname_1 === "") {
     spln.style.display = "block";
     return false;
   } else {
@@ -120,8 +120,8 @@ function handling_submitting_form() {
   resumeform = [];
 
   var resumedata = {
-    firstname: firstname,
-    lastname: lastname,
+    firstname: firstname_1,
+    lastname: lastname_1,
     // gender:  ,
     phonenumber: phonenumber,
     email: email,
