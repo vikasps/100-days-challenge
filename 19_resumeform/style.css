@@ -1,23 +1,10 @@
 body {
   margin: 0 auto;
 }
-.radioBtn {
-  /* margin-left: 10px;
-  margin-top: 10px; */
-}
-.contact-details {
-  /* width: 35%; */
-}
 
-.contact-phone .contact-email {
-  /* width: 20%;
-  margin: 20px; */
-}
-.form-label {
-}
-.pncde {
-  /* width: 45%; */
-}
 .input-error {
+  display: none;
+}
+#adrs2 {
   display: none;
 }

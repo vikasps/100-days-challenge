@@ -9,35 +9,39 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+
 </head>
 
 <body class="d-flex flex-column justify-content-between align-items-center w-50  bg-warning">
     <div id="gm"></div>
     <h1>Details for Resume</h1>
-    <form class="row g-3">
-        <div class="row g-3">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="First name" value="fname" aria-label="First name"
-                    id="inputfirstname">
-                <span class="input-error text-danger " id="sp_fn">*Invalid FirstName</span>
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" value="lname" aria-label="Last name"
-                    id="inputlastname">
-                <span class="input-error text-danger" id="sp_ln">*Invalid LastName</span>
-            </div>
+    <form class="row g-3" ">
+        <div class=" row g-3">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="First name" alterantive="fname" aria-label="First name"
+                id="inputfirstname">
+            <span class="input-error text-danger " id="sp_fn">*Invalid FirstName</span>
         </div>
-        <div class="gender" onclick="checkButton()">
-            <div class="radioBtn  d-flex justify-content-evenly w-75  mt-2">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" alterantive="lname" aria-label="Last name"
+                id="inputlastname">
+            <span class="input-error text-danger" id="sp_ln">*Invalid LastName</span>
+        </div>
+        </div>
+        <div class="gender">
+            <div id="gender_1" class="radioBtn  d-flex justify-content-evenly w-75  mt-2">
                 <label class="form-label">Gender</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="inputmale" />
+                    <input class="form-check-input" onclick="checkButton()" type="radio" name="gender" id="inputmale"
+                        alterantive="male" checked />
                     <label class="form-check-label" for="inputmale">
                         male
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="inputfemale" checked />
+                    <input class="form-check-input" onclick="checkButton()" type="radio" name="gender" id="inputfemale"
+                        alterantive="female" />
                     <label class="form-check-label" for="inputfemale">
                         female </label>
                 </div>
@@ -45,41 +49,42 @@
         </div>
         <div class="mb-12 mt-1 ">
             <label for="inputphonenumber" class="form-label">Phone-Number</label>
-            <input type="text" maxlength="10" minlength="0" class="form-control contact-phone" value="98765432"
+            <input type="text" maxlength="10" minlength="0" class="form-control contact-phone" alterantive="98765432"
                 id="inputphonenumber" placeholder="Phone-Number">
             <span class="input-error text-danger" id="sp_pn">*Invalid Phone-Number</span>
         </div>
 
         <div class="col-md-6">
             <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" value="email@gmail.com" id="inputEmail">
+            <input type="email" class="form-control" alterantive="email@gmail.com" id="inputEmail">
             <span class="input-error text-danger " id="sp_em">*Invalid Email</span>
         </div>
         <div class="col-md-6">
             <label for="inputpassword" class="form-label">Password</label>
-            <input type="password" class="form-control" value="hfohqofhohfohefo" id="inputpassword">
+            <input type="password" class="form-control" alterantive="hfohqofhohfohefo" id="inputpassword">
             <span class="input-error text-danger " id="sp_psw">*Invalid password</span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" value="vikas1234,renganagaer,srurnagar" id="inputAddress"
+            <input type="text" class="form-control" alterantive="vikas1234,renganagaer,srurnagar" id="inputAddress"
                 placeholder="1234 Main St Apartment, studio, or floor">
             <span class="input-error text-danger " id="sp_adrs">*Invalid Address </span>
         </div>
 
         <div class="form-check form-switch ms-2">
-            <input class="form-check-input " type="checkbox" id="non_indian" checked>
+            <input class="form-check-input nonindian" name="nicheck" type="checkbox" id="non_indian"
+                onclick='handleClick(this)'>
             <label class="form-check-label" for="non_indian">non-indian</label>
         </div>
 
-        <div class="col-12">
+        <div id="adrs2" class="col-12">
             <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" value="viaks1224qefowg" id="inputAddress2" placeholder="non-indian">
+            <input type="text" class="form-control" id="inputAddress2" placeholder="non-indian">
             <span class="input-error text-danger " id="sp_adrs2">*Invalid Address </span>
         </div>
         <div class="col-md-6">
             <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" value="trichy" id="inputCity">
+            <input type="text" class="form-control" alterantive="trichy" id="inputCity">
             <span class="input-error text-danger " id="sp_cty">*Invalid city </span>
         </div>
         <div class="col-md-4">
@@ -96,29 +101,29 @@
         </div>
         <div class="col-md-2">
             <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip" value="620006">
+            <input type="text" class="form-control" id="inputZip" alterantive="620006">
             <span class="input-error text-danger " id="sp_pc">*Invalid pin-code </span>
         </div>
 
         <div class="checkBox d-flex">
             <label class="control-label">Known Language</label>
             <div class="form-check ">
-                <input class=" ms-1 form-check-input" type="checkbox" value="tamil" id="cbtamil" name="check"
-                    onclick="onlyOne(this)">
+                <input class=" ms-1 form-check-input" type="checkbox" alterantive="tamil" id="cbtamil"
+                    name="knownlanguage" onclick="knowlanghandling()">
                 <label class="ms-1 form-check-label" for="cbtamil">
                     tamil
                 </label>
             </div>
             <div class="form-check">
-                <input class=" ms-1 form-check-input" type="checkbox" value="english" id="cbenglish" checked
-                    name="check" onclick="onlyOne(this)">
+                <input class=" ms-1 form-check-input" type="checkbox" alterantive="english" id="cbenglish"
+                    name="knownlanguage" onclick="knowlanghandling()">
                 <label class="form-check-label" for="cbenglish">
                     english
                 </label>
             </div>
             <div class="form-check">
-                <input class=" ms-1 form-check-input" type="checkbox" value="others" id="cbothers" checked name="check"
-                    onclick="onlyOne(this)">
+                <input class=" ms-1 form-check-input" type="checkbox" alterantive="others" id="cbothers"
+                    name="knownlanguage" onclick="knowlanghandling()">
                 <label class="form-check-label" for="cbothers">
                     others
                 </label>
@@ -128,15 +133,15 @@
         <div class="d-flex">
             <label class="form-label ml-">HTML 5</label>
             <div class="form-check form-check-inline ">
-                <input class="form-check-input ms-4" type="radio" name="inlineRadioOptions" id="htmllvl1" value="1">
+                <input class="form-check-input ms-4" type="radio" name="html" id="htmllvl1" alterantive="1">
                 <label class="form-check-label" for="htmllvl1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="htmllvl2" value="2">
+                <input class="form-check-input" type="radio" name="html" id="htmllvl2" alterantive="2">
                 <label class="form-check-label" for="htmllvl2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="htmllvl3" value="3">
+                <input class="form-check-input" type="radio" name="html" id="htmllvl3" alterantive="3">
                 <label class="form-check-label" for="htmllvl3">3</label>
             </div>
         </div>
@@ -145,30 +150,30 @@
         <div class="d-flex">
             <label class="form-label ml-">CSS 3</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input ms-5" type="radio" name="inlineRadioOptions" id="css1" value="1">
+                <input class="form-check-input ms-5" type="radio" name="css" id="css1" alterantive="1">
                 <label class="form-check-label me-2" for="css1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="css2" value="2">
+                <input class="form-check-input" type="radio" name="css" id="css2" alterantive="2">
                 <label class="form-check-label" for="css2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="css3" value="3">
+                <input class="form-check-input" type="radio" name="css" id="css3" alterantive="3">
                 <label class="form-check-label" for="css3">3</label>
             </div>
         </div>
         <div class="d-flex">
             <label class="form-label ml-">JAVA SCRIPT</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input ms-1" type="radio" name="inlineRadioOptions" id="js1" value="1">
+                <input class="form-check-input ms-1" type="radio" name="js" id="js1" alterantive="1">
                 <label class="form-check-label" for="js1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="js2" value="2">
+                <input class="form-check-input" type="radio" name="js" id="js2" alterantive="2">
                 <label class="form-check-label" for="js2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="js3" value="3">
+                <input class="form-check-input" type="radio" name="js" id="js3" alterantive="3">
                 <label class="form-check-label" for="js3">3</label>
             </div>
         </div>
@@ -180,5 +185,4 @@
         </div>
 
     </form>
-    <script src="./script.js"></script>
 </body>
