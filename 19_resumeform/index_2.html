@@ -10,63 +10,66 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="./script.js"></script>
+    <script src="./script2.js"></script>
 
 </head>
 
 <body class="d-flex flex-column justify-content-between align-items-center w-50  bg-warning">
+    <div class="new_page"> <a href="./index3.html">form</a></div>
     <div id="gm"></div>
     <h1>Details for Resume</h1>
     <form class="row g-3" ">
         <div class=" row g-3">
         <div class="col">
-            <input type="text" class="form-control" placeholder="First name" alterantive="fname" aria-label="First name"
-                id="inputfirstname">
+            <input type="text" class="form-control clrdata" placeholder="First name" qvalue="fname"
+                aria-label="First name" id="inputfirstname">
             <span class="input-error text-danger " id="sp_fn">*Invalid FirstName</span>
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="Last name" alterantive="lname" aria-label="Last name"
-                id="inputlastname">
+            <input type="text" class="form-control clrdata" placeholder="Last name" qvalue="lname"
+                aria-label="Last name" id="inputlastname">
             <span class="input-error text-danger" id="sp_ln">*Invalid LastName</span>
         </div>
         </div>
-        <div class="gender">
+        <div class="gender ">
             <div id="gender_1" class="radioBtn  d-flex justify-content-evenly w-75  mt-2">
                 <label class="form-label">Gender</label>
                 <div class="form-check">
-                    <input class="form-check-input" onclick="checkButton()" type="radio" name="gender" id="inputmale"
-                        alterantive="male" checked />
+                    <input class="form-check-input clrdata" onclick="checkButton()" type="radio" name="gender"
+                        id="inputmale" f value="male" />
                     <label class="form-check-label" for="inputmale">
                         male
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" onclick="checkButton()" type="radio" name="gender" id="inputfemale"
-                        alterantive="female" />
+                    <input class="form-check-input clrdata" onclick="checkButton()" type="radio" name="gender"
+                        id="inputfemale" value="female" />
                     <label class="form-check-label" for="inputfemale">
                         female </label>
                 </div>
             </div>
+            <div class=" text-center"><span class="input-error text-danger " id="sp_gnd">*select gender</span></div>
         </div>
         <div class="mb-12 mt-1 ">
             <label for="inputphonenumber" class="form-label">Phone-Number</label>
-            <input type="text" maxlength="10" minlength="0" class="form-control contact-phone" alterantive="98765432"
+            <input type="text" maxlength="10" minlength="0" class="form-control clrdata contact-phone" qvalue="98765432"
                 id="inputphonenumber" placeholder="Phone-Number">
             <span class="input-error text-danger" id="sp_pn">*Invalid Phone-Number</span>
         </div>
 
         <div class="col-md-6">
             <label for="inputEmail" class="form-label">Email</label>
-            <input type="email" class="form-control" alterantive="email@gmail.com" id="inputEmail">
+            <input type="email" class="form-control clrdata" qvalue="email@gmail.com" id="inputEmail">
             <span class="input-error text-danger " id="sp_em">*Invalid Email</span>
         </div>
         <div class="col-md-6">
             <label for="inputpassword" class="form-label">Password</label>
-            <input type="password" class="form-control" alterantive="hfohqofhohfohefo" id="inputpassword">
+            <input type="password" class="form-control clrdata" qvalue="hfohqofhohfohefo" id="inputpassword">
             <span class="input-error text-danger " id="sp_psw">*Invalid password</span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" alterantive="vikas1234,renganagaer,srurnagar" id="inputAddress"
+            <input type="text" class="form-control clrdata" qvalue="vikas1234,renganagaer,srurnagar" id="inputAddress"
                 placeholder="1234 Main St Apartment, studio, or floor">
             <span class="input-error text-danger " id="sp_adrs">*Invalid Address </span>
         </div>
@@ -79,108 +82,113 @@
 
         <div id="adrs2" class="col-12">
             <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="non-indian">
+            <input type="text" class="form-control clrdata" id="inputAddress2" placeholder="non-indian">
             <span class="input-error text-danger " id="sp_adrs2">*Invalid Address </span>
         </div>
         <div class="col-md-6">
             <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" alterantive="trichy" id="inputCity">
+            <input type="text" class="form-control clrdata" qvalue="trichy" id="inputCity">
             <span class="input-error text-danger " id="sp_cty">*Invalid city </span>
         </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>Tamil-Nadu</option>
-                <option>Kerala</option>
-                <option>Karnataka</option>
-                <option>Andra-Pradesh</option>
-                <option>Telugana</option>
-            </select>
-
+        <div class="col-md-4 d-flex flex-column">
+            <div>
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                    <option value="">Choose...</option>
+                    <option value="tn">Tamil-Nadu</option>
+                    <option value="kl">Kerala</option>
+                    <option value="ka">Karnataka</option>
+                    <option value="ap">Andra-Pradesh</option>
+                    <option value="tg">Telugana</option>
+                </select></div>
+            <spam class="input-error text-danger " id="sp_stt">*choose state</span>
         </div>
         <div class="col-md-2">
             <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip" alterantive="620006">
+            <input type="text" class="form-control clrdata" id="inputZip" qvalue="620006">
             <span class="input-error text-danger " id="sp_pc">*Invalid pin-code </span>
         </div>
 
         <div class="checkBox d-flex">
             <label class="control-label">Known Language</label>
             <div class="form-check ">
-                <input class=" ms-1 form-check-input" type="checkbox" alterantive="tamil" id="cbtamil"
+                <input class=" ms-1 form-check-input clrdata" type="checkbox" value="tamil" id="cbtamil"
                     name="knownlanguage" onclick="knowlanghandling()">
                 <label class="ms-1 form-check-label" for="cbtamil">
                     tamil
                 </label>
             </div>
             <div class="form-check">
-                <input class=" ms-1 form-check-input" type="checkbox" alterantive="english" id="cbenglish"
+                <input class=" ms-1 form-check-input clrdata" type="checkbox" value="english" id="cbenglish"
                     name="knownlanguage" onclick="knowlanghandling()">
                 <label class="form-check-label" for="cbenglish">
                     english
                 </label>
             </div>
             <div class="form-check">
-                <input class=" ms-1 form-check-input" type="checkbox" alterantive="others" id="cbothers"
+                <input class=" ms-1 form-check-input clrdata" type="checkbox" value="others" id="cbothers"
                     name="knownlanguage" onclick="knowlanghandling()">
                 <label class="form-check-label" for="cbothers">
                     others
                 </label>
             </div>
+            <span class="input-error text-danger  ms-4" id="sp_knwlng">*select the known language </span>
         </div>
 
         <div class="d-flex">
             <label class="form-label ml-">HTML 5</label>
             <div class="form-check form-check-inline ">
-                <input class="form-check-input ms-4" type="radio" name="html" id="htmllvl1" alterantive="1">
+                <input class="form-check-input ms-4 clrdata" type="radio" name="html" id="htmllvl1" value="1">
                 <label class="form-check-label" for="htmllvl1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="html" id="htmllvl2" alterantive="2">
+                <input class="form-check-input clrdata" type="radio" name="html" id="htmllvl2" value="2">
                 <label class="form-check-label" for="htmllvl2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="html" id="htmllvl3" alterantive="3">
+                <input class="form-check-input clrdata" type="radio" name="html" id="htmllvl3" value="3">
                 <label class="form-check-label" for="htmllvl3">3</label>
             </div>
+            <span class="input-error text-danger " id="sp_html">*select the level </span>
         </div>
 
 
         <div class="d-flex">
             <label class="form-label ml-">CSS 3</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input ms-5" type="radio" name="css" id="css1" alterantive="1">
+                <input class="form-check-input ms-5 clrdata" type="radio" name="css" id="css1" value="1">
                 <label class="form-check-label me-2" for="css1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="css" id="css2" alterantive="2">
+                <input class="form-check-input" type="radio" name="css" id="css2" value="2">
                 <label class="form-check-label" for="css2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="css" id="css3" alterantive="3">
+                <input class="form-check-input clrdata" type="radio" name="css" id="css3" value="3">
                 <label class="form-check-label" for="css3">3</label>
             </div>
+            <span class="input-error text-danger " id="sp_css">*select the level </span>
         </div>
         <div class="d-flex">
             <label class="form-label ml-">JAVA SCRIPT</label>
             <div class="form-check form-check-inline">
-                <input class="form-check-input ms-1" type="radio" name="js" id="js1" alterantive="1">
+                <input class="form-check-input ms-1 clrdata" type="radio" name="js" id="js1" value="1">
                 <label class="form-check-label" for="js1">1</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="js" id="js2" alterantive="2">
+                <input class="form-check-input clrdata" type="radio" name="js" id="js2" value="2">
                 <label class="form-check-label" for="js2">2</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="js" id="js3" alterantive="3">
+                <input class="form-check-input clrdata" type="radio" name="js" id="js3" value="3">
                 <label class="form-check-label" for="js3">3</label>
             </div>
+            <span class="input-error text-danger " id="sp_js">*select the level </span>
         </div>
 
 
         <div class="col-12 text-center">
-            <button id="submit" onclick="handling_submitting_form()" type="submit"
+            <button id="submit" onclick="handling_submitting_form(event)" type="button"
                 class="btn btn-primary">Submit</button>
         </div>
 
