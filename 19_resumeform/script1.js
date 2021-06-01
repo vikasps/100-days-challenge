@@ -1,8 +1,24 @@
-var resumeform = [];
+var resumeform;
+
+var edit_mode = false;
+
+var index_no = null;
+
+
+
+
+var editdata = JSON.parse(localStorage.getItem("completeform"));
+console.log(editdata, "its edit modeeee");
+
+if (editdata !== null) {
+  resumeform = editdata;
+} else {
+  resumeform = [];
+}
 
 function handling_submitting_form(event) {
   console.log(document.querySelector(".form-control").value);
-  event.preventDefault();
+
   var firstname_1 = document.getElementById("inputfirstname").value;
 
   var lastname_1 = document.getElementById("inputlastname").value;
@@ -177,28 +193,57 @@ function handling_submitting_form(event) {
   }
   console.log("ck4");
 
-  var resumedata = {
-    firstname: firstname_1,
-    lastname: lastname_1,
-    gender: gender,
-    phonenumber: phonenumber,
-    email: email,
-    passsword: password,
-    address: address,
-    address2: address2,
-    city: city,
-    state: state,
-    pincode: pincode,
-    know_language: knownlanguage,
-    html: languagelevel1,
-    css: languagelevel2,
-    js: languagelevel3,
-  };
+  if (edit_mode) {
+    console.log("edit mode");
+    handling_edit();
+    for (let i = 0; i < resumeform.length; i++) {
+      if (i == index_no) {
+        console.log("entering edit");
 
-  resumeform.push(resumedata);
-  console.log(JSON.stringify(resumedata));
+        resumeform[i].firstname = firstname;
+        resumeform[i].lastname = lastname;
+        resumeform[i].gender = gender;
+        resumeform[i].phonenumber = phonenumber;
+        resumeform[i].email;
+        resumeform[i].password;
+        resumeform[i].address;
+        resumeform[i].address2;
+        resumeform[i].city;
+        resumeform[i].state;
+        resumeform[i].pincode;
+        resumeform[i].know_language;
+        resumeform[i].html;
+        resumeform[i].css;
+        resumeform[i].js;
+        break;
+      }
+    }
+    index_no = null;
+    edit_mode = false;
+    inprmv();
+  } else {
+    var resumedata = {
+      firstname: firstname_1,
+      lastname: lastname_1,
+      gender: gender,
+      phonenumber: phonenumber,
+      email: email,
+      password: password,
+      address: address,
+      address2: address2,
+      city: city,
+      state: state,
+      pincode: pincode,
+      know_language: knownlanguage,
+      html: languagelevel1,
+      css: languagelevel2,
+      js: languagelevel3,
+    };
+
+    resumeform.push(resumedata);
+    console.log(JSON.stringify(resumedata));
+  }
   localStorage.setItem("completeform", JSON.stringify(resumeform));
-
   inprmv();
 }
 
@@ -244,6 +289,7 @@ function knowlanghandling() {
   console.log(vals);
   return vals;
 }
+
 function levelofhtml() {
   var selectedlevel_1 = document.querySelector(
     "input[type=radio][name=html]:checked"
@@ -255,6 +301,7 @@ function levelofhtml() {
     return "";
   }
 }
+
 function levelofcss() {
   var selectedlevel_2 = document.querySelector(
     "input[type=radio][name=css]:checked"
@@ -265,6 +312,7 @@ function levelofcss() {
     return "";
   }
 }
+
 function levelofjs() {
   var selectedlevel_3 = document.querySelector(
     "input[type=radio][name=js]:checked"
@@ -275,6 +323,7 @@ function levelofjs() {
     return "";
   }
 }
+
 function inprmv() {
   document.getElementById("inputfirstname").value = "";
 
@@ -308,4 +357,22 @@ function inprmv() {
   document.getElementById("js1").checked = false;
   document.getElementById("js2").checked = false;
   document.getElementById("js3").checked = false;
+}
+function handling_edit() {
+  document.getElementById("firstname").value = editdata.firstname;
+  document.getElementById("lastname").value = editdata.lastname;
+
+  // document.getElementById("gender").value = trData.cells[2].innerHTML;
+  // document.getElementById("phonenumber").value = trData.cells[3].innerHTML;
+  // document.getElementById("email").value = trData.cells[4].innerHTML;
+  // document.getElementById("password").value = trData.cells[5].innerHTML;
+  // document.getElementById("address").value = trData.cells[6].innerHTML;
+  // document.getElementById("address2").value = trData.cells[7].innerHTML;
+  // document.getElementById("city").value = trData.cells[8].innerHTML;
+  // document.getElementById("state").value = trData.cells[9].innerHTML;
+  // document.getElementById("pincode").value = trData.cells[10].innerHTML;
+  // document.getElementById("know_language").value = trData.cells[11].innerHTML;
+  // document.getElementById("html").value = trData.cells[12].innerHTML;
+  // document.getElementById("css").value = trData.cells[13].innerHTML;
+  // document.getElementById("js").value = trData.cells[14].innerHTML;
 }

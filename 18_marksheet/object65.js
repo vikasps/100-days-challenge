@@ -155,7 +155,6 @@ function handleUpdatingForm() {
     clearingData();
   });
 }
-
 function clearingData() {
   console.log("asdfghjkl");
   emptyingInput();
@@ -169,10 +168,12 @@ function sbmTextChangingBtn() {
   var btntext = document.getElementById("submit");
   btntext.innerHTML = "submit";
 }
+
 function updtTextChangingBtn() {
   var btntext = document.getElementById("submit");
   btntext.innerHTML = "Update";
 }
+
 function updRmvBtn() {
   var updClr = document.getElementById("clrId");
   updClr.remove();

@@ -27,3 +27,14 @@ body {
 .new_page {
   margin-right: 120px;
 }
+.tr-section {
+  border: 1px solid black;
+}
+.tr-section td {
+  border-right: 1px solid black;
+}
+
+.brd {
+  border-right: 1px solid black;
+  text-align: center;
+}
