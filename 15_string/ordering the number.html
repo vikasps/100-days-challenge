@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- in order of 1 br 2  br3 br 4 br 5 -->
+    <div>
+        <p id="ordering"></p>
+    </div>
+    <div>
+        <p id="ordering_1"></p>
+    </div>
+
+    <div>
+        <button id="bt1"></button>
+    </div>
+
+
+
+
+    <script src="./script.js"></script>
+    <script>
+        var display = "";
+        for (var i = 1; i <= 6; i++) {
+            // display += i ;
+            display += i + "<br>";
+        }
+        document.getElementById("ordering").innerHTML = display;
+        console.log(display);
+    </script>
+</body>
+
+</html>
