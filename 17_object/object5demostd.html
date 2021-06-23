@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./object5demo.css">
+</head>
+
+<body>
+    <h1>Marksheet</h1>
+    <header>
+        <div class="name_1"> <input class="input" type="text" id="name" placeholder="Name">
+            <span id="display_11">invalid name input</span></div>
+
+        <div class="class_1"> <input type="text" id="class" maxlength="2" minlength="0" placeholder="class">
+            <span id="display_22">invalid class input</span></div>
+
+        <div class="tamil_1"> <input type="number" maxlength="3" minlength="0" name="" id="tamil"
+                placeholder="tamil-mark">
+            <span id="display_33">invalid Tamil-Mark input</span></div>
+        <div class="english_1"> <input type="number" id="english" maxlength="3" minlength="0"
+                placeholder="english-mark">
+            <span id="display_44">invalid English input</span></div>
+        <button id="submit" onclick="myfunction()">submit</button>
+    </header>
+
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Tamil</th>
+            <th>English</th>
+            <th>Total</th>
+            <th>Average</th>
+        </tr>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var person = [];
+
+        function myfunction() {
+            var name = document.getElementById("name").value;
+            var id = document.getElementById("class").value
+            var tamil = document.getElementById("tamil").value;
+            var english = document.getElementById("english").value;
+
+
+            console.log('tamil', tamil);
+            console.log('english', english);
+            console.log("name", name);
+            console.log("id", id);
+
+
+
+            var display_1 = document.getElementById("display_11");
+            var display_2 = document.getElementById("display_22");
+            var display_3 = document.getElementById("display_33");
+            var display_4 = document.getElementById("display_44");
+            var display_5 = document.getElementById("display_44");
+
+            if (name === "" || id === "" || tamil === "" || english === "") {
+                display_1.style.display = "block";
+                display_2.style.display = "block";
+                display_3.style.display = "block";
+                display_4.style.display = "block";
+            }
+
+
+            if (name === "") {
+                // alert("error");
+                display_1.style.display = "block";
+                return false;
+            } else {
+                display_1.style.display = "none";
+
+            }
+            if (id === "") {
+                display_2.style.display = "block";
+                return false;
+            } else {
+                display_2.style.display = "none";
+            }
+
+            if (tamil === "") {
+                display_3.style.display = "block";
+                return false;
+
+            } else {
+                display_3.style.display = "none";
+                tamil = parseFloat(tamil);
+            }
+            if (english === "") {
+                display_4.style.display = "block";
+                return false;
+            } else {
+                display_4.style.display = "none";
+                english = parseFloat(english);
+            }
+
+
+            var total = tamil + english;
+            var average = ((total) / (2));
+
+            // console.log(tamil, "tamil");
+            // console.log(english, "english");
+
+            var details = {
+                Name: name,
+                Id: id,
+                Tamil: tamil,
+                English: english,
+                Total: total,
+                Average: average,
+            };
+            person.push(details);
+            for (i = 0; i < person.length; i++) {
+                console.log(person[0]);
+                // person[0];
+            }
+            const table = document.getElementById("table");
+            const tr = document.createElement("tr");
+            // console.log(person);
+            tr.innerHTML = `
+            <td>${person[0].Name}</td>
+            <td>${person[0].Id}</td>
+            <td>${person[0].Tamil}</td>
+            <td>${person[0].English}</td>
+            <td>${person[0].Total}</td>
+            <td>${person[0].Average}</td>
+            `;
+            table.appendChild(tr);
+
+            document.getElementById("name").value = "";
+            document.getElementById("class").value = "";
+            document.getElementById("tamil").value = "";
+            document.getElementById("english").value = "";
+
+        };
+    </script>
+</body>
+
+</html>
